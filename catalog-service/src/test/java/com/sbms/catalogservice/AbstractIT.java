@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Import({ContainersConfig.class})
-class AbstractIT {
+public class AbstractIT {
 
     @LocalServerPort
     int port;
