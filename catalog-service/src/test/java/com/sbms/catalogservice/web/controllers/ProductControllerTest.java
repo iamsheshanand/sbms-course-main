@@ -50,15 +50,15 @@ class ProductControllerTest extends AbstractIT {
         assertThat(product.price()).isEqualTo(new BigDecimal("34.0"));
     }
 
-//    @Test
-//    void shouldReturnNotFoundWhenProductCodeNotExists() {
-//        String code = "invalid_product_code";
-//        given().contentType(ContentType.JSON)
-//                .when()
-//                .get("/api/products/{code}", code)
-//                .then()
-//                .statusCode(404)
-//                .body("status", is(404))
-//                .body("title", is("Product not found"));
-//    }
+    @Test
+    void shouldReturnNotFoundWhenProductCodeNotExists() {
+        String code = "invalid_product_code";
+        given().contentType(ContentType.JSON)
+                .when()
+                .get("/api/products/{code}", code)
+                .then()
+                .statusCode(404)
+                .body("status", is(404))
+                .body("title", is("Product not found"));
+    }
 }
